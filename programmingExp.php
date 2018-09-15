@@ -1,0 +1,189 @@
+
+<!doctype html>
+<html>
+	<head>
+    
+	<title>Jingfei Jeffer Peng</title>
+	<meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<style type="text/css">
+	body{
+		font-family: 'Fira Sans', sans-serif;
+		margin:0;
+		padding:0;
+	}
+	p{
+		margin:0px;
+		padding:0px;
+	}		
+	#logo{
+			margin-left:15%;
+			position:relative;
+	}
+	.menu-margin{
+		margin:0 25px;
+	}
+
+	
+	#footer{
+		position:fixed;
+		margin-top:4%;
+		bottom:0;
+		width:100%;
+		text-align:center;
+
+	}
+	#footer a{
+		color:#CBCFD1;
+	}
+	#footer p{
+		padding-top:30px;
+		font-size:120%;
+	}
+	#footer p{
+		font-weight:200;
+		
+	}
+	#title{
+		text-align:center;
+		font-weight:900;
+		margin-top:6%;
+		margin-bottom:2%;
+	}
+	#BotTitle{
+		text-align:center;
+		font-weight:900;
+		margin-bottom:5%;
+	}
+	#smallText{
+		color:grey;
+	}
+	.img1 {
+		border: 1px solid #ddd;
+		padding: 5px;
+		border-radius: 50%;
+		background-color:white;
+		width: 200px;
+		height:200px;
+	}
+	.imgRight{
+		float:right !important;
+		margin-left:10px;
+	}
+	.leftText{
+		color:black;
+		position:relative;
+		text-align:right;
+		margin:0 auto;
+		width:530px;
+		height:200px;
+	}
+	.leftText img{
+		postion:absoulte;
+		float:left;
+	}
+	.leftText p{
+		color:grey;
+		font-size:120%;
+	}
+	#content{
+		margin-top:80px;
+		margin-bottom:20px;
+	}
+	.verticalLine{
+		margin:0 auto;
+		width:2px;
+		height:100px;
+		background-color:#d7dfea;
+	}
+	@media only screen and (max-width:770px){
+	}
+	</style>
+	</head>
+	
+    <body>
+	<?php include("navbar.php");?>
+	<div class="clear"></div>
+	<div class="container" id="title">
+			<h2> TIMELINE OF MY CS JOURNEY</h2>
+			<small id="smallText"><i>The meaning of a journey is not its destination, but the sceneries along its way<br> and the traveler's mood while viewing the landscapes... </i></h4>
+	</div>
+	<div id="content">
+	<div class="leftText">
+		<img src="images/coding/gaming.png" class="img1 imgRight">
+		<h4>2006 - 2014 <br>Start of My Passion for CS</h5>
+		<p> Started to use computers and was hugely interested in computer games. This interest later transformed to 
+		be the start of my interest in CS as I want to know how these games were built. The game in the picture is Company of Heros 1.
+		</p>
+	</div>
+	<div class="verticalLine"></div>
+	<div class="leftText">
+		<img src="images/coding/pythonCode.png" class="img1" id="python">
+		<h4> 2014 - 2016 <br>CS Starts at Python</h5>
+		<p> Learned Python as my first programming language. Explored basic data structures in programming and had a general grasp about programming.
+			Built a platform shooting game using pygame library in the end.
+		</p>
+	</div>
+	<div class="verticalLine"></div>
+	<div class="leftText">
+		<img src="images/coding/c++Logo.jpg" class="img1 imgRight">
+		<h4>2016 Sept- 2017 June<br>Learning C++</h5>
+		<p>Explored the basic concepts in object-oriented programming and learned memory manipulation using pointers. Learned about data types. Made the choice 
+		to study Computer Science at the University of Waterloo.
+		</p>
+	</div>
+	<div class="verticalLine"></div>
+	<div class="leftText">
+		<img src="images/coding/UWLogo.png" class="img1" id="python">
+		<h4> 2017 - 2018 <br>First Year in Waterloo</h5>
+		<p> Explored functional programming and learned about advanced trees diagrams and searching techniques. Gained a deeper understanding of abstract data types 
+		and memory manipulation in C language. Developed apps for solving Sudoku, maze and applied ADTs to solve coding challenges.
+		</p>
+	</div>
+	<div class="verticalLine"></div>
+	<div class="leftText">
+		<img src="images/coding/website.png" class="img1 imgRight">
+		<h4>2018 April - Now <br>Web Development and Coop</h5>
+		<p>Got the job of Web Developer for my first Coop job. Gained extensive experiences in HTML, CSS, Javascript, jQuery and Bootstrap to create smooth UI for websites
+			and used Php to manipulate MySQL database. Built my personal website.
+		</p>
+	</div>
+	<div class="verticalLine"></div>
+	</div>
+	<div class="container" id="BotTitle">
+		<h4><i> To be continued... </i></h4>
+	</div>
+	
+	<div class="clear"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	$("#logo").click(function(){
+		if ($(this).css("font-weight")=="400"){
+			$(this).animate({
+				left:"-=10%",
+			},2000, function() {
+				$(this).css("font-weight", "bold");
+            });
+		} else {
+			$(this).animate({
+				left:"+=10%",
+			},2000,function(){
+				$(this).css("font-weight","normal");
+			});
+		}});
+	
+		function underConstruction(){
+			alert("This page is under construction. Come back later XD");
+		}
+	</script>
+	
+	</body>
+</html>

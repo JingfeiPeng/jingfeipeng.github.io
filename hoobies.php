@@ -1,0 +1,209 @@
+
+<!doctype html>
+<html>
+	<head>
+    
+	<title>Jingfei Jeffer Peng</title>
+	<meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<style type="text/css">
+	body{
+		font-family: 'Fira Sans', sans-serif;
+		margin:0;
+		padding:0;
+	}
+	p{
+		margin:0px;
+		padding:0px;
+	}		
+	#logo{
+			margin-left:15%;
+			position:relative;
+	}
+	.menu-margin{
+		margin:0 25px;
+	}
+
+	
+	#footer{
+		position:fixed;
+		margin-top:4%;
+		bottom:0;
+		width:100%;
+		text-align:center;
+
+	}
+	#footer a{
+		color:#CBCFD1;
+	}
+	#footer p{
+		padding-top:30px;
+		font-size:120%;
+	}
+	#footer p{
+		font-weight:200;
+		
+	}
+	#title{
+		text-align:center;
+		font-weight:900;
+		margin-top:6%;
+		margin-bottom:2%;
+	}
+	#title p{
+		color:gold;
+	}
+
+	@media only screen and (max-width:770px){
+        #info{
+            width:90%;
+        }
+	}
+	div img{
+		height:450px;
+	}
+	.container{
+		width:800px;
+		margin-bottom:20px;
+	}
+
+	</style>
+	</head>
+	
+    <body>
+	<?php include("navbar.php");?>
+	<div class="clear"></div>
+	<div class="container" id="title">
+		<h1>MY HOOBIES </h1>
+		<p> Work hard, Play hard</p>
+	</div>
+	<div class="container">
+		<div class="accordion" id="accordionExample" onmouseout ="WhichButton(event)">
+			<div class="card">
+			<div class="card-header" id="headingOne">
+			  <h5 class="mb-0">
+				<button id="militaryModelling" class="btn btn-link" type="button" data-toggle="collapse" data-target="#MilitaryModelShow" aria-expanded="true" aria-controls="collapseOne">
+					Building Military Model kits
+				</button>
+			  </h5>
+			</div>
+
+			<div id="MilitaryModelShow" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+			  <div class="card-body">
+					Description for Military Models
+			  </div>
+			</div>
+		  </div>
+		  <div class="card">
+			<div class="card-header" id="headingOne">
+			  <h5 class="mb-0">
+				<button id="badminton" class="btn btn-link" type="button" data-toggle="collapse" data-target="#BadmintonShow" aria-expanded="true" aria-controls="collapseOne">
+				  Badminton
+				</button>
+			  </h5>
+			</div>
+
+			<div id="BadmintonShow" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+			  <div class="card-body">
+					Description for playing Badminton
+				</div>
+			</div>
+		  </div>
+		  <div class="card">
+			<div class="card-header" id="headingTwo">
+			  <h5 class="mb-0">
+				<button id="pingPong" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				  Table Tennnis
+				</button>
+			  </h5>
+			</div>
+			<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+			  <div class="card-body">
+				Description for Table Tennis
+			  </div>
+			</div>
+		  </div>
+		  <div class="card">
+			<div class="card-header" id="headingThree">
+			  <h5 class="mb-0">
+				<button id="guineaPig" class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				  Petting Guinea Pigs
+				</button>
+			  </h5>
+			</div>
+			<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+			  <div class="card-body">
+				Description for guinea pigs
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		  <ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		  </ol>
+		  <div class="carousel-inner">
+			<div id="selectImages"> </div>
+
+		  </div>
+		  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		  </a>
+		  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		  </a>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js"></script>
+	<script type="text/javascript">
+	$("#logo").click(function(){
+		if ($(this).css("font-weight")=="400"){
+			$(this).animate({
+				left:"-=10%",
+			},2000, function() {
+				$(this).css("font-weight", "bold");
+            });
+		} else {
+			$(this).animate({
+				left:"+=10%",
+			},2000,function(){
+				$(this).css("font-weight","normal");
+			});
+		}});
+	function WhichButton(event) {
+		if ($("#BadmintonShow").hasClass("show")){
+			document.getElementById("selectImages").innerHTML="<div class='carousel-item active'><img class='d-block w-100' src='images/badminton.jpg' alt='First slide'><div class='carousel-caption d-none d-md-block'><h5>I had fell in love with playing badminton since childhood</h5><p>I played a lot of badminton at church with friends during grade 11 and 12</p></div></div>";
+		} else if ($("#collapseTwo").hasClass("show")){
+			document.getElementById("selectImages").innerHTML="<div class='carousel-item active'><img class='d-block w-100' src='images/pingpong.jpg' alt='First slide'><div class='carousel-caption d-none d-md-block'><h5>Table Tennis has gradually became one my most played sport during high school</h5><p>I was fortunately enough to be selected as team member for Earl Haig SS's table tennis team</p></div></div>";
+		} else if ($("#collapseThree").hasClass("show")){
+			document.getElementById("selectImages").innerHTML="<div class='carousel-item active'><img class='d-block w-100' src='images/guineaPig1.jpg' alt='First slide'><div class='carousel-caption d-none d-md-block'><h5>Guinea pigs are so cute</h5><p>The furry one is Maomao and the other one is Pengpeng</p></div></div><div class='carousel-item'><img class='d-block w-100' src='images/guineaPig2.jpg' alt='Second slide'></div><div class='carousel-item'><img class='d-block w-100' src='images/guineaPig3.jpg' alt='Third slide'></div>";
+		}else if ($("#MilitaryModelShow").hasClass("show")){
+			document.getElementById("selectImages").innerHTML="<div class='carousel-item active'><img class='d-block w-100' src='images/panther.jpg' alt='First slide'><div class='carousel-caption d-none d-md-block'><h5>German Panther Medium tank</h5><p>The Panther is a German medium tank deployed during World War II on the Eastern and Western Fronts in Europe from mid-1943 to the war's end in 1945.</p></div></div><div class='carousel-item'><img class='d-block w-100' src='images/tankCollection1.jpg' alt='Second slide'></div><div class='carousel-item'><img class='d-block w-100' src='images/tankCollection2.jpg' alt='Third slide'></div>";
+		}
+	}
+		
+		
+		
+	
+	
+	</script>
+	
+	</body>
+</html>

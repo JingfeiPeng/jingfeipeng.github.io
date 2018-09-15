@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+	<head>
+	<title>Jingfei Jeffer Peng</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<script src="js/wow.js"></script>
+	<script>
+       new WOW().init();
+    </script>
+	<style type="text/css">
+	body{
+		font-family: 'Fira Sans', sans-serif;
+		margin:0;
+		padding:0;
+	}
+	p{
+		margin:0px;
+		padding:0px;
+	}		
+	#logo{
+			margin-left:15%;
+			position:relative;
+	}
+	.menu-margin{
+		margin:0 25px;
+	}
+	#footer{
+		bottom:0;
+		width:100%;
+		height:90px;
+		background-color:#F8F9FA;
+		text-align:center;
+
+	}
+	#footer p{
+		padding-top:30px;
+		font-size:120%;
+	}
+	.space{
+		margin-bottom:10px;
+	}
+	#title{
+		text-align:center;
+		font-weight:900;
+		margin-top:6%;
+		margin-bottom:2%;
+	}
+	#title h3{
+		color:gold;
+	}
+	.itemSelect{
+		width:50%;
+		height:300px;
+		background-color:black;
+		margin:2% auto;
+		text-align:center;
+		box-shadow:0 0 5px grey;
+		transition:all 0.5s ease;
+	}
+	#codePlayer{
+		background-image:url("images/codePlayerImg.png");
+		background-size: 100% 105%;
+	}
+	.itemSelect h3{
+		padding-top:20%;
+	}
+	.itemSelect :hover{
+		border-radius:10%;
+	}
+	@media only screen and (max-width:500px){
+		#codePlayer,#tennisGame,#diary,#weather{
+			width:70%;
+			height:250px;
+		}
+	
+	}
+	#tennisGame{
+		background-size: 100% 105%;
+		background-image:url("images/tennisGame.png");
+	}
+	#weather{
+		background-image:url("images/backgroundPhp.jpg");
+		background-size:100% 105%;
+	}
+	#diary{
+		background-image:url("secretDiary/diaryBackground.jpg");
+		background-size:100% 105%;
+		color:white;
+	}
+	#ReactBurger{
+		background-image:url("images/ReactBurger.png");
+		background-size:100% 105%;
+	}
+
+
+
+	</style>
+	</head>
+	
+    <body>
+	<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark py-1 space">
+	  <a class="navbar-brand py-1" id="logo" href="#"><em>JP</em></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse menu-margin" id="navbarTogglerDemo02">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		  <li class="nav-item menu-margin">
+			<a class="nav-link" href="http://jingfeipeng.tech/">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item menu-margin active">
+			<a class="nav-link"" href="project.html">Porfolio</a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link" href="contact.html">Contact</a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link"  href="http://jingfeipeng-tech.stackstaging.com/wordpress">Wordpress</a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link" target="_blank" href="resume/resume.pdf">Resume</a>
+		  </li>
+		</ul>
+	  </div>
+	</nav>
+	
+	<div class="container" id="title">
+		<h3> PORTFOLIO </h3>
+		<h1> Recent Projects</h1>
+	</div>
+			
+	<div onclick="location.href='secretDiary/index.php'" class="itemSelect wow bounceInLeft" id="diary">
+		<h3> Secret Diary</h3>
+		<p> Used mySQL database and Php to securely store your account and diary</p>
+	</div>
+	
+	<div onclick="location.href='https://react-my-burger-b5e43.firebaseapp.com/react-Burger'" class="itemSelect wow bounceInRight" id="ReactBurger">
+		<h3 style="position:relative;top:15px"> Burger Ordering App</h3>
+		<p> This virtual burger ordering app is built as a practice of react skills</p>
+	</div>
+	
+	
+	<div onclick="location.href='code-player.html'" class="itemSelect wow bounceInRight" id="codePlayer">
+		<a href="code-player.html" style="color:black;text-decoration:none"	>
+			<h3> Code Player </h3>
+			<p> This code player is an editor that displays the html, css and javascript of codes on the same screen side by side </p> 
+		</a>
+	</div>
+
+	<div onclick="location.href='gameMenu.html'" class="itemSelect wow bounceInLeft" id="tennisGame">
+		<a href="gameMenu.html" style="color:white; text-decoration:none">
+			<h3> Tennis Player </h3>
+			<p> Control the paddle with a mouse and play tennis with a robot</p>
+		</a>
+	
+	</div>
+	
+	<div onclick="location.href='php/index.php'" class="itemSelect wow bounceInRight" id="weather">
+		<a href="php/index.php" style="color:white; text-decoration:none">
+			<h3> Weather Scraper</h3>
+			<p> Weather information is obtained from openweathermap API using PHP</p>
+		</a>
+	
+	</div>
+	
+	
+	
+	
+	<div class="clear"></div>
+	<footer id="footer">
+			<p>&copy; Jingfei Jeffer Peng 2018</p>
+	</footer>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	$("#logo").click(function(){
+		if ($(this).css("font-weight")=="400"){
+			$(this).animate({
+				left:"-=10%",
+			},2000, function() {
+				$(this).css("font-weight", "bold");
+            });
+		} else {
+			$(this).animate({
+				left:"+=10%",
+			},2000,function(){
+				$(this).css("font-weight","normal");
+			});
+		}});
+	
+		function underConstruction(){
+			alert("This page is under construction. Come back later XD");
+		}
+	</script>
+	
+	</body>
+</html>

@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML 5 and CSS 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+   <style>
+   
+   </style>
+  </head>
+
+  <body>
+	<canvas id="clock" width="500" height="500">
+	please upgrade browser
+	</canvas>
+      
+    <script>
+	function setTime(){
+		var canvas=document.getElementById("clock");
+		var context = canvas.getContext("2d");
+		var clockRadius = canvas.width/2;
+		context.beginPath();
+		context.fillStyle="black";
+		context.arc(clockRadius,clockRadius,clockRadius-10,0,2*Math.PI);
+		context.fill();
+		context.strokeStyle="grey";
+		context.lineWidth=10;
+		context.stroke();
+		
+		context.font=clockRadius/10 + "px Arial";
+		context.fillStyle="white";
+		context.textAlign = "center";
+		context.textBaseline = "middle";
+
+		for (var i = 1; i <= 12;i++){
+			context.fillText(i,clockRadius+clockRadius*0.85*Math.sin(i*2*Math.PI /12),
+							clockRadius-clockRadius*0.85*Math.cos(i*2*Math.PI /12));	
+		}
+		var date = new Date();
+		var hours = date.getHours();
+		var minutes = date.getMinutes();
+		var seconds = date.getSeconds();
+		
+		var fullHours = hours % 12 + minutes/60 +seconds/3600;
+		var hourAngle = fullHours * 2* Math.PI/12;
+		var minutesAngle = minutes * 2 * Math.PI/60;
+		var secondsAngle = seconds*2 * Math.PI/60;
+		
+		//hour hand
+		context.strokeStyle = "grey";
+		context.lineWidth = 12;
+		context.moveTo(clockRadius,clockRadius);
+		context.lineTo(clockRadius+clockRadius*0.5*Math.sin(hourAngle),clockRadius-clockRadius*0.5*Math.cos(hourAngle));
+		context.stroke();
+		
+		//minute hand
+		context.lineWidth = 8;
+		context.moveTo(clockRadius,clockRadius);
+		context.lineTo(clockRadius+clockRadius*0.65*Math.sin(minutesAngle),clockRadius-clockRadius*0.65*Math.cos(minutesAngle));
+		context.stroke();
+		
+		//seconds hand
+		context.lineWidth = 4;
+		context.moveTo(clockRadius,clockRadius);
+		context.lineTo(clockRadius+clockRadius*0.85*Math.sin(secondsAngle),clockRadius-clockRadius*0.85*Math.cos(secondsAngle));
+		context.stroke();
+		
+		context.beginPath();
+		context.fillStyle="white";
+		context.arc(clockRadius,clockRadius,15,0,2*Math.PI,false);
+		context.fill();
+		
+	}
+	setInterval(setTime,1000);
+	
+	
+	
+	
+	
+	/*
+	var myCanvas = document.getElementById("myCanvas");
+	var context = myCanvas.getContext("2d");
+	context.fillStyle = "green";
+	context.fillRect(myCanvas.width/2-200/2,myCanvas.height/2-200/2,200,200);
+	
+	context.moveTo(myCanvas.width/2-200/2,myCanvas.height/2-200/2);
+	context.lineTo(myCanvas.width/2-200/2+200,myCanvas.height/2-200/2+200);
+
+	context.moveTo(myCanvas.width/2-200/2,myCanvas.height/2-200/2+200);
+	context.lineTo(myCanvas.width/2-200/2+200,myCanvas.height/2-200/2);
+	context.strokeStyle="blue";
+	context.lineWidth=10;
+	context.stroke();
+	
+	context.beginPath();
+	context.arc(100,100,20,0, 2*Math.PI,false);
+	context.fill();
+	context.stroke();
+	
+	var gradient =context.createLinearGradient(200,50,300,100);
+	gradient.addColorStop(0,"white");
+	gradient.addColorStop(1,"black");
+	context.fillStyle=gradient;
+	context.fillRect(200,50,100,50);
+	var gradient2 = context.createLinearGradient(200,50,300,20);
+	gradient2.addColorStop(0,"red");
+	gradient2.addColorStop(1,"green");
+	
+	context.fillStyle=gradient2;
+	context.font = "20px Arial";
+	context.fillText("My Canvas",200,50);
+	*/
+      </script>
+   
+  </body>
+</html>

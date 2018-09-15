@@ -1,0 +1,162 @@
+
+<!doctype html>
+<html>
+	<head>
+    
+	<title>Jingfei Jeffer Peng</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<style type="text/css">
+	body{
+		font-family: 'Fira Sans', sans-serif;
+		margin:0;
+		padding:0;
+	}
+	p{
+		margin:0px;
+		padding:0px;
+	}		
+	#logo{
+			margin-left:15%;
+			position:relative;
+	}
+	.menu-margin{
+		margin:0 25px;
+	}
+
+	
+	#footer{
+		margin-top:4%;
+	   position: fixed;
+	   left: 0;
+	   bottom: 0;
+	   width:100%;
+		height:90px;
+		background-color:#F8F9FA;
+		text-align:center;
+
+	}
+	#footer p{
+		padding-top:30px;
+		font-size:120%;
+	}
+	#info{
+		width:60%;
+		margin-top:4%;
+	}
+	#wechat{
+		display:none;
+		width:200px;
+	}
+
+	@media only screen and (max-width:770px){
+        #info{
+            width:90%;
+        }
+	}
+	</style>
+	</head>
+	
+    <body>
+	<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark py-1 space">
+	  <a class="navbar-brand py-1" id="logo" href="#"><em>JP</em></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse menu-margin" id="navbarTogglerDemo02">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		  <li class="nav-item menu-margin">
+			<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link" href="project.html">Porfolio</a>
+		  </li>
+		  <li class="nav-item active menu-margin">
+			<a class="nav-link" href="contact.html">Contact</a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link"  href="http://jingfeipeng-tech.stackstaging.com/wordpress">Wordpress</a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link" href="resume/resume.pdf">Resume</a>
+		  </li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+		  <input class="form-control mr-sm-2" type="search" placeholder="Search">
+		  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	  </div>
+	</nav>
+	<div class="clear"></div>
+	<div class="container" id="info">
+		<h3 style="text-align:center"> My Contact Information</h3>
+		<ul class="list-group">
+			<li class="list-group-item"><b>Legal Name:</b> Jingfei Peng</li>
+			<li class="list-group-item"><b>Prefered Name:</b> Jeffer Peng</li>
+			<li class="list-group-item"><b>Email:</b> jf2peng@edu.uwaterloo.ca</li>
+			<li class="list-group-item"><b>Cellphone Number:</b> 5195885668</li>
+			<li class="list-group-item"><b>Social Media:</b>
+			<a href="https://github.com/JingfeiPeng">
+			<img style="width:50px;" src="images/githubT.png">
+			Github </a>
+			
+			<a href="https://www.linkedin.com/in/jeffer-jingfei-peng-b41376136/">
+			<img style="width:45px;" src="images/linkedInT.png">
+			LinkedIn profile</a>
+			</li>
+			<li class="list-group-item"><b>WeChat ID:</b> j157581711 
+			<button id="showQR" style="float:right" type="button" class="btn btn-success" onclick="displayWechat()"> Click to display QR code</button>
+			<br/>
+			<img id="wechat" src="images/wehchatQR.png">
+			</li>
+		</ul>
+	
+	</div>
+	
+	
+	<div class="clear"></div>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	$("#logo").click(function(){
+		if ($(this).css("font-weight")=="400"){
+			$(this).animate({
+				left:"-=10%",
+			},2000, function() {
+				$(this).css("font-weight", "bold");
+            });
+		} else {
+			$(this).animate({
+				left:"+=10%",
+			},2000,function(){
+				$(this).css("font-weight","normal");
+			});
+		}});
+		
+		function displayWechat(){
+			if ($("#wechat").css("display")=="none"){
+				document.getElementById("showQR").innerHTML="click to hide QR code";
+				document.getElementById("wechat").style.display ="inline";
+			} else{
+				document.getElementById("showQR").innerHTML="click to display QR code";
+				document.getElementById("wechat").style.display ="none";
+			}
+		
+		
+		}
+	
+		function underConstruction(){
+			alert("This page is under construction. Come back later XD");
+		}
+	</script>
+	
+	</body>
+</html>

@@ -1,0 +1,261 @@
+<?php
+	$error = "";
+	$successMessage ="";
+	if($_POST){
+		if (!$_POST["email"]){
+			$error .="The email address is required.<br>";
+		}
+		if (!$_POST["subject"]){
+			$error .="The subject is required.<br>";
+		}
+		if (!$_POST["content"]){
+			$error .="The content is required.<br>";
+		}
+		if ($_POST["email"]&&!filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)){
+			$error .="The email address is invalid.<br>";
+			
+		}
+		if ($error !=""){
+			$error ='<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form:</strong></p>'.$error.'<div>';
+		}else{
+			$emailTo = "jf2peng@edu.uwaterloo.ca";
+			$subject = $_POST['subject'];
+			$content = $_POST['content'];
+			$headers = "From: ".$_POST['email'];
+			if (mail($emailTo,$subject,$content,$headers)){
+				$successMessage='<div class="alert alert-success" role="alert"><p><strong>Your message was sent, I\'ll get back to you ASAP!</strong></p></div>';
+				
+			}else{
+				$error ='<div class="alert alert-danger" role="alert"><p><strong>Your message couldn\'t be sent-please try again later</strong></p><div>';
+			}	
+		}
+	}
+?>
+
+<!doctype html>
+<html>
+	<head>
+	<title>Jingfei Jiffer Peng</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Jeffer Jingfei Peng">
+    <meta name="author" content="Jingfei Peng">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="css/animate.css">
+	<script src="js/wow.js"></script>
+	<script>
+       new WOW().init();
+    </script>
+	<link rel="stylesheet" href="css/indexStyle.css">
+	</head>
+	
+    <body>
+	<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark py-1 space">
+	  <a class="navbar-brand py-1" id="logo" href="#"><em>JP</em></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse menu-margin" id="navbarTogglerDemo02">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		  <li class="nav-item active menu-margin">
+			<a class="nav-link" href="http://jingfeipeng.tech/">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link"" href="project.html">Porfolio</a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link" href="contact.html">Contact</a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link"  href="http://jingfeipeng-tech.stackstaging.com/wordpress">Wordpress</a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link" href="resume/resume.pdf">Resume</a>
+		  </li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+		  <input class="form-control mr-sm-2" type="search" placeholder="Search">
+		  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	  </div>
+	</nav>
+	<div class="clear"></div>
+	<div id="mainScreen">
+		<div class="wow pulse">
+			<h1 class="title" id="mainTitle"> Jeffer Peng </h1>
+			<h2 class="title" id="subtitle">A Computer Science student at the University of Waterloo</h2>
+			<div class="title">
+				<button type="button" id="learnMore" data-toggle="modal" data-target="#exampleModalLong" data-name="Jeffer">
+				  Contact Me
+				</button>
+			</div>
+		</div>
+	</div>
+	<div>
+	<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			
+			
+			<div class="container">
+			
+				<div id="error"><? echo $error.$successMessage; ?></div>
+				<form id="formEmail" method="post">
+					<div class="form-group">
+						<label for="email">Your email address</label>
+						<input type="email" class="form-control" name="email" id="email" placeholder="name@gmail.com">
+					  </div>
+				  <div class="form-group">
+					<label for="subject">Subject</label>
+					<input type="text" name="subject" class="form-control" id="subject">
+				  </div>
+				  <div class="form-group">
+					<label for="content">What would you like to say?</label>
+					<textarea class="form-control" id="content" name="content"></textarea>
+				  </div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" id="submit" class="btn btn-primary"> Send Message!</button>
+					</div>
+				</form>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	</div>
+	
+	<div class="clear"></div>
+	<div class="container-fluid">
+		<div class="categories wow bounceInDown" id="codingExperience" onclick="location.href='programmingExp.php'">
+			<h1> My Journey to Computer Science </h1>
+			<h2 > Programming Experience </h2>
+			<img src="images/programmingExp.jpg" alt="image for programming">
+		</div>
+		<div class="categories wow bounceInDown" id="workExperience" onclick="location.href='coopExp.php'">
+			<h1>Work Experiences</h1>
+			<h2>Practice Knowledge in Real world</h2>
+			<img src="images/workPic.png" style="height:55%;" alt="image for work">
+		</div>
+		<div class="clear"></div>
+		<div class="categories wow bounceInLeft" id="hoobies" onclick="location.href='hoobies.php'">
+			<h1> Outside of Programming </h1>
+			<h2> My hoobies and interests </h2>
+			<img src="images/hoobiesPic.jpg" alt="Image for hoobies">
+		</div>
+		<div class="categories wow bounceInRight" id="projects" onclick="location.href='project.html'">
+			<a href="project.html">
+			<h1> Portfolio </h1>
+			<h2> My Project Portfolio </h2>
+			<img src="images/projects-background.jpg" alt="Image for Projects">
+			</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<footer>
+		<div class="information">
+			<div class="lists" id="firstList">
+				<b>&copy; Jingfei Jeffer Peng 2018</b>
+				<ul>
+				<li style="text-align:center">
+					<a href="https://github.com/JingfeiPeng"><img style="width:45px;" src="images/githubT.png"></a>
+					<a href="https://www.linkedin.com/in/jeffer-jingfei-peng-b41376136/"><img style="display:inline;width:45px;" src="images/linkedInT.png"></a>
+				</li>
+			</div>
+			<div class="lists">
+				<b>Features</b><br/>
+				<ul class="">
+					<li><a href="index.php">Home</a></li>
+					<li><a href="project.html">Portfolio</a><br/></li>
+					<li><a href="contact.html">Contact</a><br/></li>
+					<li><a href="http://jingfeipeng-tech.stackstaging.com/wordpress">Visit Wordpress Site</a></li>
+				</ul>
+			</div>
+			<div class="lists">
+				<b>Placeholder</b><br>
+				<ul class="">
+					<li><a  href="#">placeholder sub-index</a></li>
+					<li><a  href="#">placeholder sub-index 2</a></li>
+				</ul>
+			</div>
+			<div class="lists">
+				<b>Placeholder2</b><br>
+				<ul class="">
+					<li><a  href="#">placeholder sub-index</a></li>
+					<li><a  href="#">placeholder sub-index 2</a></li>
+				</ul>
+			</div>
+			<div class="lists">
+				<b>Sources</b><br>
+				<ul class="">
+					<li><a  href="disclaimer.php">references</a></li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	
+	$('#exampleModalLong').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget) 
+		var recipient = button.data('name') 
+		var modal = $(this)
+		modal.find('.modal-title').text('New message to ' + recipient)
+
+	})
+	
+	$("#formEmail").submit(function(e){
+		var error ="";
+		if ($("#email").val()==""){
+			error += "The email field is required.<br>";
+		}
+		if ($("#subject").val()==""){
+			error += "The subject field is required.<br>";
+		}
+		if ($("#content").val()==""){
+			error += "The content field is required.";
+		}
+
+		if (error != ""){
+			$("#error").html('<div class="alert alert-danger" role="alert"><p><strong>There were error(s) in your form:</strong></p>'+error+'<div>');
+			return false;
+		} else {
+			return true;
+		}
+	});
+		
+		
+	$("#logo").click(function(){
+		if ($(this).css("font-weight")=="400"){
+			$(this).animate({
+				left:"-=10%",
+			},2000, function() {
+				$(this).css("font-weight", "bold");
+            });
+		} else {
+			$(this).animate({
+				left:"+=10%",
+			},2000,function(){
+				$(this).css("font-weight","normal");
+			});
+		}});
+	
+	</script>
+	
+	</body>
+</html>

@@ -1,0 +1,311 @@
+<!doctype html>
+<html>
+	<head>
+    
+	<title>Jingfei Jeffer Peng</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+	<style type="text/css">
+	body{
+		font-family: 'Fira Sans', sans-serif;
+		margin:0;
+		padding:0;
+	}
+	p{
+		margin:0px;
+		padding:0px;
+	}		
+	#logo{
+			margin-left:15%;
+			position:relative;
+	}
+	.menu-margin{
+		margin:0 25px;
+	}
+
+	
+	#footer{
+		margin-top:4%;
+		bottom:0;
+		width:100%;
+		height:90px;
+		background-color:#F8F9FA;
+		text-align:center;
+
+	}
+	#footer p{
+		padding-top:30px;
+		font-size:120%;
+	}
+	@media only screen and (max-width:770px){
+        #info{
+            width:90%;
+        }
+	}
+	#canvasContainer{
+		display:none;
+		width: 100%;
+		text-align:center;
+	}
+	canvas{
+		display:inline;
+	}	
+	#gameStarter{
+		margin-top:2%;
+		text-align:center;
+	}
+	#gameCanvas{
+		border:5px solid red;
+	
+	}
+	</style>
+	</head>
+	
+    <body>
+	<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark py-1 space">
+	  <a class="navbar-brand py-1" id="logo" href="#"><em>JP</em></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse menu-margin" id="navbarTogglerDemo02">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		  <li class="nav-item menu-margin">
+			<a class="nav-link" href="http://jingfeipeng.tech/">Home <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link"" href="project.html">Porfolio</a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link" href="contact.html">Contact</a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link"  href="http://jingfeipeng-tech.stackstaging.com/wordpress">Wordpress</a>
+		  </li>
+		  <li class="nav-item menu-margin">
+			<a class="nav-link" href="resume/resume.pdf">Resume</a>
+		  </li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0">
+		  <input class="form-control mr-sm-2" type="search" placeholder="Search">
+		  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	  </div>
+	</nav>
+	<div class="clear"></div>
+	<div id="canvasContainer">
+		<canvas id="gameCanvas" width="800" height="500" style="border:5px solid #848484;"> </canvas>
+	</div>
+	
+	<div class="container" id="gameStarter">
+		<h2> Welcome to the Tennis Game </h2>
+		<div id="gameSetup">
+			<h3> Game settings </h3>
+			<label for="winningScore">Maximum Scores: </label>
+			<input type="text" id="winningScore" value="3">
+			<label for="ballSpeed">Ball Speed: </label>
+			<input type="text" id="ballSpeed" value="12">
+		</div>
+		<button class="btn btn-success" onclick="startGame()"> Start Game </button>
+	
+	
+	</div>
+	
+	
+	
+	
+	<div class="clear"></div>
+	<script type="text/javascript">
+	var canvas;
+	var canvasContext;
+	var ballX=50;
+	var ballY=50;
+	var ballSpeedX;
+	var ballSpeedY = 4;
+	var player1Score=0;
+	var player2Score=0;
+	var winning_score;
+	
+	var paddle1Y=250;
+	var paddle2Y=250;
+	const paddle_height =100; 
+	const paddle_thick = 10;
+	const computer_paddle_speed=6;
+	//6
+	var showingWinScreen = false;
+	
+	function findMousePos(evt){
+		var rect=canvas.getBoundingClientRect();
+		var root=document.documentElement;
+		var mouseX = evt.clientX - rect.left -root.scrollLeft;
+		var mouseY = evt.clientY - rect.top -root.scrollTop;
+		return {
+			x:mouseX,
+			y:mouseY,
+		}
+	}
+	
+	function startGame(){
+		document.getElementById("canvasContainer").style.display="block";
+		document.getElementById("gameStarter").style.display="none";
+		ballSpeedX = document.getElementById("ballSpeed").value;
+		
+		winning_score=document.getElementById("winningScore").value;
+		canvas = document.getElementById("gameCanvas");
+		canvasContext=canvas.getContext("2d");
+		var fps=30;
+		setInterval(function(){
+			moveEverything();
+			drawEverything();
+		},1000/fps);
+		canvas.addEventListener('mousedown',handleMouseClick);
+		canvas.addEventListener('mousemove',
+			function(evt){
+				var mousePos = findMousePos(evt);
+				paddle1Y =mousePos.y -(paddle_height/2);
+		});
+	}
+	function handleMouseClick(evt){
+		if (showingWinScreen){
+			player1Score=0;
+			player2Score=0;
+			showingWinScreen=false;
+		}
+	}
+	function computerMovement(){
+		var paddle2YCenter = paddle2Y+paddle_height/2;
+		if (paddle2YCenter < ballY-35){
+			paddle2Y += computer_paddle_speed;
+		} else if (paddle2YCenter-35 >ballY){
+			paddle2Y -= computer_paddle_speed; 
+		}
+	
+	}
+	
+	function moveEverything(){
+		if (showingWinScreen){
+			return;
+		}
+		
+		computerMovement();
+		ballX += ballSpeedX;
+		ballY += ballSpeedY;
+		if (ballX >= canvas.width){
+			if (ballY > paddle2Y &&
+				ballY <paddle2Y+paddle_height){
+				ballSpeedX = -ballSpeedX;
+				var deltaY = ballY-(paddle2Y+paddle_height/2);
+				ballSpeedY= deltaY *0.35;
+			} else{
+				player1Score++; //must be before reset
+				ballReset();
+			}
+		} else if (ballX <= 0){
+			if (ballY > paddle1Y &&	 ballY <paddle1Y+paddle_height){
+				ballSpeedX = -ballSpeedX;
+				var deltaY = ballY-(paddle1Y+paddle_height/2);
+				ballSpeedY= deltaY *0.35;
+				
+			} else{
+				player2Score++; //must be before reset
+				ballReset();
+			}
+		} 
+		if (ballY >= canvas.height){
+			ballSpeedY = -ballSpeedY;
+		} else if (ballY < 0){
+			ballSpeedY = -ballSpeedY;
+		}
+	}
+	
+	
+	function ballReset(){
+		if (player1Score >= winning_score || player2Score >= winning_score){
+			showingWinScreen = true;
+		}
+	
+		ballSpeedX = -ballSpeedX;	
+		ballSpeedY = -ballSpeedY;
+		ballX = canvas.width/2;
+		ballY= canvas.width/2;
+		paddle2Y = canvas.height/2-paddle_height/2;
+		
+	}
+	function drawNet(){
+		for (var i= 0; i< canvas.height;i+=40){
+			colorRect(canvas.width/2-1,i,2,20,'white');
+		};
+	
+	}
+	function drawEverything(){
+		//set Screen color
+		colorRect(0,0,canvas.width,canvas.height,"black");
+		canvasContext.font = "15px Arial";
+		if (showingWinScreen){
+			canvasContext.fillStyle= "white";
+			if (player1Score >= winning_score){
+				canvasContext.fillText("Player 1 won!",350,250);
+				showingWinScreen = true;
+			} else if (player2Score >= winning_score){
+				canvasContext.fillText("Player 2 won!",350,250);
+				showingWinScreen = true;
+			}
+			canvasContext.fillText("click to continue",350,450);
+			return;
+		}
+		drawNet();
+		//This is left player's paddle
+		colorRect(0,paddle1Y,paddle_thick,paddle_height,"white");
+		
+		//This is left computer's paddle
+		colorRect(canvas.width-paddle_thick,paddle2Y,paddle_thick,paddle_height,"white");
+		
+		//This is the ball;
+		colorCircle(ballX,ballY,paddle_thick,"red");
+		canvasContext.fillStyle="white";
+		canvasContext.fillText("player1 Score: "+player1Score, 100,100);
+		canvasContext.fillText("player2 Score: "+player2Score, canvas.width-190,100);
+		
+	}
+	function colorCircle(centerX,centerY,radius,color){
+		canvasContext.fillStyle=color;
+		canvasContext.beginPath();
+		canvasContext.arc(centerX,centerY,radius,0,Math.PI*2,true);
+		canvasContext.fill();
+	}
+	function colorRect(leftX,topY,width, height,drawColor){
+		canvasContext.fillStyle=drawColor;
+		canvasContext.fillRect(leftX,topY,width,height);
+	}
+
+</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	$("#logo").click(function(){
+		if ($(this).css("font-weight")=="400"){
+			$(this).animate({
+				left:"-=10%",
+			},2000, function() {
+				$(this).css("font-weight", "bold");
+            });
+		} else {
+			$(this).animate({
+				left:"+=10%",
+			},2000,function(){
+				$(this).css("font-weight","normal");
+			});
+		}});
+
+	</script>
+	
+	</body>
+</html>
