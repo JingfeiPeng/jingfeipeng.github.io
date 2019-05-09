@@ -1,0 +1,222 @@
+
+body {
+	position: relative;
+	font-family: 'Open Sans', sans-serif;
+}
+.navbar-brand{
+	margin-left:30px;
+	opacity:1;
+}
+.navbar-brand img{
+	width:120px;
+	height:120px;
+}
+#phone{
+	display:inline-block;
+	margin-right:30px;
+	float:right
+}
+.nav-link{
+	border-bottom: 3px solid transparent;
+}
+.nav-link:hover{
+	border-bottom: 3px solid grey;
+}
+.bold{
+	font-weight:bold;
+}
+#text{
+	font-size: 25px;
+}
+.jumbotron{
+	height:500px;
+	background-image: url("../assets/agents.jpg"), url("../assets/finance.jpg");
+	background-size:50% 100%;
+	background-repeat: no-repeat, no-repeat;
+	background-position:left top, right top;
+	text-align:center  !important;
+	margin-bottom:50px;
+}
+.jumbotron p{
+	font-size:1.5rem;
+}
+#jumbText{
+	width:440px;
+	height:400px;
+	background-color:white;
+	margin:auto;
+	border-radius:50%;
+	box-shadow:0 0 5px grey;
+}
+#jumbText h3{
+	padding-top:60px;
+}	
+nav.shrinked{
+	height:80px !important;
+	-webkit-transition:1s all ease;
+	transition:1s all ease;
+}
+nav{
+	height:150px;
+	position:relative;
+	opacity:0.8;
+	-webkit-transition:1s all ease;
+	transition:1s all ease;
+}
+.container h2{
+	color:#9D9D9D;
+	text-transform:uppercase;
+	text-align:center;
+}
+.col-sm-4{
+	text-align:center;
+	font-size:1.3rem;
+}
+.col-sm-4 img{
+	-webkit-transition:0.5s all ease;
+	transition:0.5s all ease;
+	width:300px;
+	height:170px;
+}
+.col-sm-4 img:hover{
+	border-radius:50%;
+	box-shadow:0 0 5px grey;
+}
+#services{
+	height:680px;
+	padding-top:80px;
+}
+#headerName{
+	display: flex;
+	height: 80px;
+	width: 180px;
+	align-items: center;
+	justify-content: center;
+}
+#headerNameText{
+	font-size: 40;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+#staff{
+	padding-top:50px;
+	text-align:center;
+	background: linear-gradient(to bottom, white, #eadce3);
+	height:560px;
+}
+#staff img{
+	margin:0 20px 20px 20px;
+	float:left;
+	border-radius:10%;
+	border:2px solid black;
+	box-shadow:0 0 10px grey;
+}
+#staff h2{
+	padding-top:40px;
+}
+#staff div{
+	margin:auto;
+	width:70%;
+}
+footer{
+	color:white;
+	height:500px;
+	background-color:#161616;
+}
+footer h2{
+	padding: 20px;
+	font-family: 'Wendy One', sans-serif;
+}
+footer img{
+	display:inline-block;
+	width:200px;
+	height:300px;
+	border-radius:5%;
+	transition:all 0.5s ease;
+}
+footer img:hover{
+	border-radius:10%;
+}
+footer div{
+	width:700px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#contact{
+	width:300px;
+	margin-left:20px;
+	display:inline-block;
+	vertical-align:top;
+}
+#contact h4{
+	text-align:center;
+}
+.img {
+	display: block;
+	margin-top:20px;
+	margin-left: auto;
+	margin-right: auto;
+	width:280px;
+	height:100px;
+}
+@media (max-width:500px){
+	nav.shrinked{
+		height:auto !important;
+	}
+	nav{
+		height:auto;
+		opacity:0.9;
+	}
+	.navbar-brand{
+		margin-left:0;
+	}
+	.navbar-brand img{
+		width:80px;
+		height:80px;
+	}
+	.jumbotron{
+		height:450px;
+	}
+	#jumbText{
+		margin-top:40px;
+		height:330px;
+		width:75%;
+	}
+	#jumbText h3{
+		font-size:1rem;
+	}
+	#jumbText p{
+		font-size:1rem;
+	}
+	#services{
+		height:1650px;
+	}
+	li{
+		display:inline;
+	}
+	#staff{
+		height:750px;
+	}
+	#staff img{
+		height:150px;
+	}
+	#staff div{
+		width:100%;
+	}
+	footer div{
+		width:95%;
+		margin:auto;
+	}
+	footer img{
+		width:140px;
+		height:180px;
+	}
+	#contact{
+		width:50%;
+		margin-left:20px;
+		display:inline-block;
+	}
+	footer{
+		height:400px;
+	}
+}
