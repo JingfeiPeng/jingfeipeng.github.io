@@ -231,6 +231,10 @@ footer div{
 	opacity: 1;
 	right: 0;
   }
+  .projectDescription{
+	padding-top: 10px;
+	font-size: 18px;
+  }
 @media (max-width:500px){
 	nav.shrinked{
 		height:auto !important;
