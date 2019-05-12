@@ -129,15 +129,15 @@ nav{
 	background: linear-gradient(to bottom, white, #eadce3);
 	height:560px;
 }
+#staff h2{
+	padding-top: 20px;
+}
 #staff img{
 	margin:0 20px 20px 20px;
 	float:left;
 	border-radius:10%;
 	border:2px solid black;
 	box-shadow:0 0 10px grey;
-}
-#staff h2{
-	padding-top:40px;
 }
 #staff div{
 	margin:auto;
