@@ -42,6 +42,19 @@ body {
 .jumbotron p{
 	font-size:1.5rem;
 }
+#project{
+	text-align: center;
+}
+.projectTitle{
+	color: #3B4893 !important;
+	font-size: 18px;
+	font-weight: bold;
+}
+.projectLanuage{
+	color:#13f2d8;
+	font-size: 15px;
+	font-weight: bold;
+}
 #jumbText{
 	width:440px;
 	height:440px;
@@ -60,6 +73,9 @@ body {
 #jumbText h3{
 	padding-top:60px;
 }	
+#githubLink{
+	font-weight: bold;
+}
 nav.shrinked{
 	height:80px !important;
 	/* background-color: black;
@@ -94,8 +110,8 @@ nav{
 	box-shadow:0 0 5px grey;
 }
 #services{
-	height:680px;
 	padding-top:80px;
+	padding-bottom: 30px;
 }
 #headerName{
 	display: flex;
