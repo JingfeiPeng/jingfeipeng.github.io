@@ -19,7 +19,6 @@ body {
 .nav-link{
 	border-bottom: 3px solid transparent;
 	font-family: 'Montserrat',"Helvetica Neue",Helvetica,Arial,sans-serif;
-
 }
 .nav-link:hover{
 	border-bottom: 3px solid grey;
@@ -189,6 +188,49 @@ footer div{
 	width:280px;
 	height:100px;
 }
+
+#profileButton {
+	display: inline-block;
+	background-color: Transparent;
+	border-radius: 20px;
+	border:1px solid grey;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 18px;
+	padding: 15px;
+	width: 220px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+  }
+  
+  #profileButton span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+  }
+  
+  #profileButton span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+  }
+  #profileButton:hover{
+	 background-color: #7b38d8;
+  }
+  
+  #profileButton:hover span {
+	padding-right: 25px;
+  }
+  
+  #profileButton:hover span:after {
+	opacity: 1;
+	right: 0;
+  }
 @media (max-width:500px){
 	nav.shrinked{
 		height:auto !important;
