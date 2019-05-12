@@ -18,6 +18,8 @@ body {
 }
 .nav-link{
 	border-bottom: 3px solid transparent;
+	font-family: 'Montserrat',"Helvetica Neue",Helvetica,Arial,sans-serif;
+
 }
 .nav-link:hover{
 	border-bottom: 3px solid grey;
@@ -26,11 +28,11 @@ body {
 	font-weight:bold;
 }
 #text{
-	font-size: 25px;
+	font-size: 20px;
 }
 .jumbotron{
-	height:500px;
-	background-image: url("../assets/agents.jpg"), url("../assets/finance.jpg");
+	height:560px;
+	background-image: url("../assets/leftPic.jpg"), url("../assets/rightPic.jpg");
 	background-size:50% 100%;
 	background-repeat: no-repeat, no-repeat;
 	background-position:left top, right top;
@@ -42,17 +44,26 @@ body {
 }
 #jumbText{
 	width:440px;
-	height:400px;
-	background-color:white;
+	height:440px;
+	/* background-color:white; */
 	margin:auto;
 	border-radius:50%;
+	background-image: url("../assets/myself.jpg");
+	background-repeat: no-repeat;
+	background-size: 440px;
 	box-shadow:0 0 5px grey;
+	display:flex;
+	align-items: flex-end;
+	justify-content: center;
+	padding-bottom: 40px;
 }
 #jumbText h3{
 	padding-top:60px;
 }	
 nav.shrinked{
 	height:80px !important;
+	/* background-color: black;
+	color:white; */
 	-webkit-transition:1s all ease;
 	transition:1s all ease;
 }
@@ -89,13 +100,13 @@ nav{
 #headerName{
 	display: flex;
 	height: 80px;
-	width: 180px;
+	width: 250px;
 	align-items: center;
 	justify-content: center;
 }
 #headerNameText{
-	font-size: 40;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+	font-size: 25px;
+    font-family: 'Montserrat',"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 #staff{
 	padding-top:50px;
@@ -121,6 +132,9 @@ footer{
 	color:white;
 	height:500px;
 	background-color:#161616;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between
 }
 footer h2{
 	padding: 20px;
