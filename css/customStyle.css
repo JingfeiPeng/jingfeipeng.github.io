@@ -239,6 +239,7 @@ footer div{
 		margin: 0 auto;
 		width: 300px;
 		transform: translateY(8%);
+		padding-bottom: 50px;
 		transition: all 0.5s;
 		cursor: pointer;
 	}
@@ -302,9 +303,6 @@ footer div{
 	}
 	#jumbText p{
 		font-size:1rem;
-	}
-	#services{
-		height:1650px;
 	}
 	li{
 		display:inline;
